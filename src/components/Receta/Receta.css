@@ -1,0 +1,51 @@
+.button-container {
+  position: relative;
+  display: inline-flex;
+  width: 180px;
+  height: 55px;
+  perspective: 1000px;
+}
+.button-container a {
+  cursor: pointer;
+  font-size: 19px;
+  letter-spacing: 1px;
+  transform-style: preserve-3d;
+  transform: translateZ(-25px);
+  transition: transform 0.25s;
+  font-family: "Montserrat", sans-serif;
+}
+.button-container h1 {
+  text-decoration: underline;
+}
+.button-container a:before,
+.button-container a:after {
+  position: absolute;
+  content: attr(data-text);
+  height: 55px;
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid black;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.button-container a:before {
+  color: #fff;
+  background: #000;
+  transform: rotateY(0deg) translateZ(25px);
+}
+.button-container a:after {
+  color: #000;
+  transform: rotateX(90deg) translateZ(25px);
+}
+.button-container a:hover {
+  transform: translateZ(-25px) rotateX(-90deg);
+}
+
+.ingredientes {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 0.5rem;
+}
