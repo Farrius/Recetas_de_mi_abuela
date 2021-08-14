@@ -2,6 +2,7 @@ import React from "react";
 import "./PopUp.css";
 
 const Popup = (props) => {
+  console.log(props.content);
   return (
     <div className="popup-box">
       <div className="box">
