@@ -3,15 +3,15 @@
   display: inline-flex;
   width: 180px;
   height: 55px;
-  perspective: 1000px;
 }
 .button-container a {
   cursor: pointer;
   font-size: 19px;
   letter-spacing: 1px;
+
   transform-style: preserve-3d;
   transform: translateZ(-25px);
-  transition: transform 0.25s;
+  transition: transform 0.2 5s;
   font-family: "Montserrat", sans-serif;
 }
 .button-container h1 {
@@ -23,9 +23,11 @@
   content: attr(data-text);
   height: 55px;
   width: 180px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   border: 5px solid black;
   box-sizing: border-box;
   border-radius: 5px;

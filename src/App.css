@@ -14,3 +14,8 @@
 body {
   font-family: "Homer_Simpson_Revised";
 }
+
+.app_container {
+  display: flex;
+  flex-direction: column;
+}

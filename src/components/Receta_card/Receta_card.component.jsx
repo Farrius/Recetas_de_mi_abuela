@@ -1,21 +1,21 @@
 import React, { useState } from "react";
-import "./Receta.css";
+import "./Receta_card.css";
 import Popup from "../PopUp/PopUp.component";
 
-const Receta = (props) => {
+const Receta_card = (props) => {
   const [isOpen, setOpen] = useState(false);
 
-  const toggleReceta = () => {
+  const togglePopup = () => {
     setOpen(!isOpen);
   };
   return (
     <div className="button-container">
-      <a onClick={toggleReceta} data-text={props.titulo} />
+      <a data-text={props.title} onClick={togglePopup}></a>
       {isOpen && (
         <Popup
           content={
             <>
-              <h1>{props.titulo}</h1>
+              <h1>{props.title}</h1>
               <br />
               <h2>Ingredientes</h2>
               <ul className="ingredientes">
@@ -26,6 +26,7 @@ const Receta = (props) => {
                 <li>Ajo</li>
                 <li>Comino</li>
                 <li>Curucuma</li>
+                <li>Curry</li>
                 <li>Pimienta</li>
                 <li>Agua</li>
                 <li>Sal</li>
@@ -37,14 +38,26 @@ const Receta = (props) => {
                 <li>Picar la cebolla</li>
                 <li>Esperar a que lo demas lo haga tu abuela</li>
                 <li> Comer mucho</li>
+                <li>Picar la cebolla</li>
+                <li>Esperar a que lo demas lo haga tu abuela</li>
+                <li> Comer mucho</li>
+                <li>Picar la cebolla</li>
+                <li>Esperar a que lo demas lo haga tu abuela</li>
+                <li> Comer mucho</li>
+                <li>Picar la cebolla</li>
+                <li>Esperar a que lo demas lo haga tu abuela</li>
+                <li> Comer mucho</li>
               </ol>
             </>
           }
-          handleClose={toggleReceta}
+          handleClose={togglePopup}
         />
       )}
     </div>
   );
 };
 
-export default Receta;
+export default Receta_card;
+/*
+<a onClick={toggleReceta} data-text={props.title} />
+      */
