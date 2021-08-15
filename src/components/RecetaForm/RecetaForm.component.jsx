@@ -3,6 +3,7 @@ import "./RecetaForm.css";
 
 const RecetaForm = (props) => {
   const initStateValues = {
+    title: "",
     ingredientes: "",
     pasos: "",
   };
@@ -23,6 +24,16 @@ const RecetaForm = (props) => {
   return (
     <div className="container_recetasForm" onSubmit={handleSubmit}>
       <form>
+        <input
+          type="text"
+          className="titulo"
+          name="title"
+          placeholder="Nombre de la receta"
+          onChange={handleInputChange}
+          value={values.title}
+        />
+        <br />
+        <br />
         <h2>Ingredientes</h2>
         <textarea
           type="text"
@@ -32,6 +43,8 @@ const RecetaForm = (props) => {
           onChange={handleInputChange}
           value={values.ingredientes}
         />
+        <br />
+        <br />
         <h2>Pasos</h2>
         <textarea
           type="text"

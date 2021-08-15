@@ -18,21 +18,35 @@ const Recetas = () => {
     db.collection("recetas").onSnapshot((querySnapshot) => {
       const docs = [];
       querySnapshot.forEach((doc) => {
-        docs.push({ ...doc.data(), id: doc.id });
+        const ingredientsArray = doc.data().ingredientes.split("\n");
+        const pasosArray = doc.data().pasos.split("\n");
+        docs.push({
+          titulo: doc.data().title,
+          ingredientes: ingredientsArray,
+          pasos: pasosArray,
+          id: doc.id,
+        });
       });
-      console.log(docs);
+      setRecetas(docs);
     });
   };
 
   useEffect(() => {
     getLinks();
   }, []);
-
+  console.log(recetas);
   return (
     <div className="recetas_container">
-      <Button title="Arroz al curry" htmlContent={<RecetaCard />} />
+      {recetas.map((receta) => (
+        <Button
+          tipo={false}
+          title={receta.titulo}
+          key={receta.id}
+          data={receta}
+        />
+      ))}
       <div className="crear_button">
-        <Button title="Crear" htmlContent={<RecetaForm addLink={addLink} />} />
+        <Button tipo={true} title="Crear" addLink={addLink} data={[]} />
       </div>
     </div>
   );
