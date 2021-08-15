@@ -8,6 +8,7 @@ const Button = (props) => {
   const togglePopup = () => {
     setOpen(!isOpen);
   };
+
   return (
     <div className="button-container">
       <a data-text={props.title} onClick={togglePopup} />
