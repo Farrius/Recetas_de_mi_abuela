@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./Recetas.css";
 
 import Button from "../Button/Button.component";
-import RecetaCard from "../RecetaCard/RecetaCard.component";
-import RecetaForm from "../RecetaForm/RecetaForm.component";
 
 import { db } from "../../firebase";
 
