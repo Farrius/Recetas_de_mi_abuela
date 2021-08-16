@@ -12,12 +12,18 @@ const Popup = (props) => {
           X
         </span>
         {props.tipo ? (
-          <RecetaForm addLink={props.addLink} />
+          <RecetaForm
+            addLink={props.addLink}
+            data={props.data}
+            curId={props.curId}
+          />
         ) : (
           <RecetaCard
             titulo={props.data.titulo}
             ingredientes={props.data.ingredientes}
             pasos={props.data.pasos}
+            deleteLink={props.deleteLink}
+            id={props.data.id}
           />
         )}
       </div>

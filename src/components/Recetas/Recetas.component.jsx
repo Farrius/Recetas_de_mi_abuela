@@ -14,6 +14,12 @@ const Recetas = () => {
     await db.collection("recetas").doc().set(linkObject);
   };
 
+  const deleteLink = async (id) => {
+    if (window.confirm("Seguro?")) {
+      await db.collection("recetas").doc(id).delete();
+    }
+  };
+
   const getLinks = async () => {
     db.collection("recetas").onSnapshot((querySnapshot) => {
       const docs = [];
@@ -34,7 +40,7 @@ const Recetas = () => {
   useEffect(() => {
     getLinks();
   }, []);
-  console.log(recetas);
+
   return (
     <div className="recetas_container">
       {recetas.map((receta) => (
@@ -43,10 +49,11 @@ const Recetas = () => {
           title={receta.titulo}
           key={receta.id}
           data={receta}
+          deleteLink={deleteLink}
         />
       ))}
       <div className="crear_button">
-        <Button tipo={true} title="Crear" addLink={addLink} data={[]} />
+        <Button tipo={true} title="Crear" addLink={addLink} data={recetas} />
       </div>
     </div>
   );

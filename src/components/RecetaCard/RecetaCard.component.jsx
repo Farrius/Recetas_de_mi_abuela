@@ -19,6 +19,11 @@ const RecetaCard = (props) => {
           <li key={cnt}>{paso}</li>
         ))}
       </ol>
+      <div className="botones">
+        <button className="del" onClick={() => props.deleteLink(props.id)}>
+          Eliminar
+        </button>
+      </div>
     </div>
   );
 };

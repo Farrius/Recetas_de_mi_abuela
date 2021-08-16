@@ -51,3 +51,14 @@
   grid-column-gap: 1.5rem;
   grid-row-gap: 0.5rem;
 }
+
+.botones {
+  display: grid;
+  grid-template-columns: 8fr 1fr;
+  justify-content: center;
+  align-content: center;
+}
+
+.del {
+  grid-column: 2;
+}

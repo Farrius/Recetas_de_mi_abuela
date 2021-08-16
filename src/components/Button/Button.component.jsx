@@ -8,7 +8,6 @@ const Button = (props) => {
   const togglePopup = () => {
     setOpen(!isOpen);
   };
-
   return (
     <div className="button-container">
       <a data-text={props.title} onClick={togglePopup} />
@@ -17,6 +16,7 @@ const Button = (props) => {
           tipo={props.tipo}
           handleClose={togglePopup}
           addLink={props.addLink}
+          deleteLink={props.deleteLink}
           data={props.data}
         />
       )}
