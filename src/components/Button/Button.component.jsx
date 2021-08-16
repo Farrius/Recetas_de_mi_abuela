@@ -12,7 +12,13 @@ const Button = (props) => {
     <div className="button-container">
       <a data-text={props.title} onClick={togglePopup} />
       {isOpen && (
-        <Popup content={props.htmlContent} handleClose={togglePopup} />
+        <Popup
+          tipo={props.tipo}
+          handleClose={togglePopup}
+          addLink={props.addLink}
+          deleteLink={props.deleteLink}
+          data={props.data}
+        />
       )}
     </div>
   );

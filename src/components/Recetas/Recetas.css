@@ -5,3 +5,8 @@
   gap: 0.2rem;
   flex-wrap: wrap;
 }
+
+.crear_button {
+  display: flex;
+  text-align: center;
+}

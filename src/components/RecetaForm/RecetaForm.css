@@ -1,0 +1,8 @@
+textarea {
+  min-width: 50vw;
+  min-height: 25vh;
+}
+
+.container_recetasForm {
+  display: grid;
+}

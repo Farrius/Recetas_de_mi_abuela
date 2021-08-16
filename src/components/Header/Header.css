@@ -1,12 +1,7 @@
 .header_container {
   text-align: center;
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
   height: 15vh;
   align-items: center;
-}
-
-.header_container h1 {
-  font-size: 10vh;
-  grid-column: 2;
+  font-size: 5vh;
 }

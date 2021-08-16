@@ -4,39 +4,26 @@ import "./RecetaCard.css";
 const RecetaCard = (props) => {
   return (
     <div className="container_recetaCard">
-      <h1>{props.title}</h1>
+      <h1>{props.titulo}</h1>
       <br />
       <h2>Ingredientes</h2>
       <ul className="ingredientes">
-        <li>Arroz</li>
-        <li>Pollo</li>
-        <li>Pasas</li>
-        <li>Cebolla</li>
-        <li>Ajo</li>
-        <li>Comino</li>
-        <li>Curucuma</li>
-        <li>Curry</li>
-        <li>Pimienta</li>
-        <li>Agua</li>
-        <li>Sal</li>
-        <li>Aceite</li>
+        {props.ingredientes.map((ingredient, cnt) => (
+          <li key={cnt}>{ingredient}</li>
+        ))}
       </ul>
       <br />
       <h2>Pasos</h2>
       <ol className="pasos">
-        <li>Picar la cebolla</li>
-        <li>Esperar a que lo demas lo haga tu abuela</li>
-        <li> Comer mucho</li>
-        <li>Picar la cebolla</li>
-        <li>Esperar a que lo demas lo haga tu abuela</li>
-        <li> Comer mucho</li>
-        <li>Picar la cebolla</li>
-        <li>Esperar a que lo demas lo haga tu abuela</li>
-        <li> Comer mucho</li>
-        <li>Picar la cebolla</li>
-        <li>Esperar a que lo demas lo haga tu abuela</li>
-        <li> Comer mucho</li>
+        {props.pasos.map((paso, cnt) => (
+          <li key={cnt}>{paso}</li>
+        ))}
       </ol>
+      <div className="botones">
+        <button className="del" onClick={() => props.deleteLink(props.id)}>
+          Eliminar
+        </button>
+      </div>
     </div>
   );
 };
